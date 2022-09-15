@@ -24,7 +24,7 @@ export default {
       default: 0,
     },
   },
-  //emits: ["update:modelValue"],
+  emits: ["update:modelValue"],
   methods: {
     handleClick(index) {
       this.$emit("update:modelValue", index);

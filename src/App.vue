@@ -1,31 +1,39 @@
 <template>
   <HelloWorld msg="Welcome To My Vue Js Site" class="hello"></HelloWorld>
-  <p>My Rating : {{ myRating }}</p>
-  <the-rating v-model="myRating"></the-rating>
+  <div class="container">
+    <h2>Credit Card Info</h2>
+    <CreditCard></CreditCard>
+  </div>
 </template>
 <script>
-import TheRating from "./components/TheRating.vue";
 import HelloWorld from "./components/HelloWorld.vue";
+import CreditCard from "./components/CreditCard.vue";
 export default {
   name: "App",
 
   data() {
     return {
-      myRating: 3,
+      nameOnCard: "",
+      cardNumber: "",
+      expiry: "",
+      cvv: "",
     };
   },
   methods: {},
   components: {
-    TheRating,
     HelloWorld,
+    CreditCard,
   },
 };
 </script>
 
-<style>
+<style scoped>
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+.container {
+  padding: 22px;
 }
 </style>
