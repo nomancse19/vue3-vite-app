@@ -5,6 +5,7 @@
       v-model="myComment"
       buttonText="Continue"
       class="shadow"
+      placeholder="Enter Text Here..."
     ></the-comment>
     <br />
     <br />
@@ -21,10 +22,14 @@ export default {
 
   data() {
     return {
-      myComment: "Mr. ",
+      myComment: "",
     };
   },
-  methods: {},
+  methods: {
+    checkClick() {
+      alert("Check Click Alert On");
+    },
+  },
   components: {
     HelloWorld,
     TheComment,

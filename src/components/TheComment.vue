@@ -6,6 +6,7 @@
       id=""
       cols="40"
       rows="5"
+      v-bind="$attrs"
     ></textarea>
     <div class="text-right">
       <button>{{ buttonText }}</button>
@@ -25,6 +26,7 @@ export default {
       default: "",
     },
   },
+  inheritAttrs: false,
   methods: {
     handleInput(e) {
       //console.log(e.target.value);
