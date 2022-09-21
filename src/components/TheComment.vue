@@ -9,7 +9,7 @@
       v-bind="$attrs"
     ></textarea>
     <div class="text-right">
-      <button>{{ buttonText }}</button>
+      <button @click="$emit('continueClick')">{{ buttonText }}</button>
     </div>
   </div>
 </template>

@@ -6,33 +6,44 @@
       buttonText="Continue"
       class="shadow"
       placeholder="Enter Text Here..."
+      @continueClick="handleContiuneButton()"
     ></the-comment>
     <br />
     <br />
     <br />
     <hr />
     <p>Your Comment is : {{ myComment }} <br /></p>
+    <the-dialog heading="Are You Sure To Want Comment" v-if="showDialog">
+      <p>this is body of notifications bar ...</p>
+    </the-dialog>
   </div>
 </template>
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
 import TheComment from "./components/TheComment.vue";
+import TheDialog from "./components/TheDialog.vue";
 export default {
   name: "App",
 
   data() {
     return {
       myComment: "",
+      showDialog: false,
     };
   },
   methods: {
     checkClick() {
       alert("Check Click Alert On");
     },
+
+    handleContiuneButton() {
+      this.showDialog = true;
+    },
   },
   components: {
     HelloWorld,
     TheComment,
+    TheDialog,
   },
 };
 </script>
@@ -45,6 +56,7 @@ export default {
 }
 .container {
   padding: 22px;
+  color: red;
 }
 body {
   line-height: 1.8;
