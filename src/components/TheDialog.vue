@@ -1,14 +1,16 @@
 <template>
-  <div class="the-dialog">
-    <div class="the-dialog__container">
-      <div class="the-dialog__header">
-        {{ heading }}
-      </div>
-      <div class="the-dialog__body">
-        <slot></slot>
+  <teleport to="#dialogs">
+    <div class="the-dialog">
+      <div class="the-dialog__container">
+        <div class="the-dialog__header">
+          {{ heading }}
+        </div>
+        <div class="the-dialog__body">
+          <slot></slot>
+        </div>
       </div>
     </div>
-  </div>
+  </teleport>
 </template>
 
 <script>
@@ -31,7 +33,7 @@ export default {
 .the-dialog__container {
   width: 333px;
   margin: auto;
-  min-height: 222px;
+  min-height: 150px;
   border-radius: 10px;
   background-color: #fff;
 }
