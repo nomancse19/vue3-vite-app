@@ -1,8 +1,18 @@
 <template>
   <HelloWorld msg="Welcome To My Vue Js Site" class="hello"></HelloWorld>
   <div class="container">
-    <div class="tab">
-      <div class="tab__menu">
+    <input type="text" ref="normalComment" v-model="name" />
+    <the-comment
+      v-model="myComment"
+      buttonText="Continue Comment"
+      placeholder="Enter Your Comment"
+      ref="commentInput"
+    ></the-comment>
+    <br />
+    <hr />
+    <p>Your Comment Is : {{ myComment }}</p>
+    <!-- <div class="tab"> -->
+    <!-- <div class="tab__menu">
         <div
           class="tab__menu-item"
           v-for="(tab, i) in tabs"
@@ -12,16 +22,16 @@
         >
           {{ tab }}
         </div>
-      </div>
-      <div class="tab__content">
-        <br />
-        <!-- <login v-if="activeTab === 'Login'"></login> -->
-        <!-- <Register v-if="activeTab === 'Register'"></Register> -->
-        <keep-alive>
+      </div> -->
+    <!-- <div class="tab__content"> -->
+
+    <!-- <login v-if="activeTab === 'Login'"></login> -->
+    <!-- <Register v-if="activeTab === 'Register'"></Register> -->
+    <!-- <keep-alive>
           <component :is="activeTab" />
-        </keep-alive>
-      </div>
-    </div>
+        </keep-alive> -->
+    <!-- </div> -->
+    <!-- </div> -->
   </div>
 </template>
 <script>
@@ -29,6 +39,7 @@ import HelloWorld from "./components/HelloWorld.vue";
 import Login from "./components/Login.vue";
 import Register from "./components/Register.vue";
 import AboutMeCard from "./components/AboutMeCard.vue";
+import TheComment from "./components/TheComment.vue";
 export default {
   name: "App",
 
@@ -50,6 +61,9 @@ export default {
       about_body: this.aboutBody,
     };
   },
+  mounted() {
+    console.dir(this.$refs.normalComment);
+  },
   methods: {
     checkClick() {
       alert("Check Click Alert On");
@@ -70,6 +84,7 @@ export default {
     Login,
     Register,
     AboutMeCard,
+    TheComment,
   },
 };
 </script>
