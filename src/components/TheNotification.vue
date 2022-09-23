@@ -19,7 +19,7 @@ export default {
   background-color: #fff;
   color: rgb(255, 24, 174);
   font-weight: bold;
-  padding: 15px 7px;
+  padding: 12px 3px;
   border: 1px solid gray;
   margin: 22px;
   margin-right: 10px;
