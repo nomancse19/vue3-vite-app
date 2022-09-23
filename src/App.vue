@@ -28,6 +28,7 @@
 import HelloWorld from "./components/HelloWorld.vue";
 import Login from "./components/Login.vue";
 import Register from "./components/Register.vue";
+import AboutMeCard from "./components/AboutMeCard.vue";
 export default {
   name: "App",
 
@@ -36,8 +37,17 @@ export default {
       myComment: "",
       showDialog: false,
       notifications: [],
-      tabs: ["Login", "Register"],
+      tabs: ["Login", "Register", "AboutMeCard"],
       activeTab: "Login",
+      aboutMe: "Md. Jahidul Islam Noman",
+      aboutBody: "My Name Is Jahiudl Islam Noman . I am  programmer.",
+    };
+  },
+
+  provide() {
+    return {
+      about_title: this.aboutMe,
+      about_body: this.aboutBody,
     };
   },
   methods: {
@@ -59,6 +69,7 @@ export default {
     HelloWorld,
     Login,
     Register,
+    AboutMeCard,
   },
 };
 </script>

@@ -4,34 +4,15 @@
       <h3>About Me Card</h3>
     </div>
     <div class="the-content">
-      <div class="content-title">{{ about_info.title }}</div>
-      <div class="content-body">{{ about_info.body }}</div>
-      <div class="content-footer">
-        <button
-          id="hide_button"
-          v-if="hide_button && about_info.title"
-          @click="hideTitle()"
-        >
-          Hide Title
-        </button>
-
-        <button id="show_button" v-if="show_button" @click="hideTitle()">
-          Show Title
-        </button>
-        <button v-if="about_info.body">Hide Body Text</button>
-      </div>
+      <div class="content-title">{{ about_title }}</div>
+      <div class="content-body">{{ about_body }}</div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: {
-    about_info: {
-      type: Object,
-      default: () => ({}),
-    },
-  },
+  inject: ["about_title", "about_body"],
   data() {
     return {
       hide_button: true,
