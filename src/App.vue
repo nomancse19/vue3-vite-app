@@ -1,16 +1,77 @@
 <template>
   <HelloWorld msg="Welcome To My Vue Js Site" class="hello"></HelloWorld>
   <div class="container">
-    <input type="text" ref="normalComment" v-model="name" />
-    <the-comment
-      v-model="myComment"
-      buttonText="Continue Comment"
-      placeholder="Enter Your Comment"
-      ref="commentInput"
-    ></the-comment>
+    <h1>New User Registrations</h1>
+    <label for="">Your Name </label><br />
+    <input
+      type="text"
+      placeholder="Enter Your Name"
+      v-model="formData.fullName"
+    /><br />
+
+    <label for="">About Your Info </label><br />
+    <textarea
+      placeholder="Enter Something About You ..."
+      cols="30"
+      rows="2"
+      v-model="formData.aboutYou"
+    ></textarea
+    ><br />
+    <label for="">Select Gender</label>
+    <label for=""
+      ><input
+        type="radio"
+        name="gender"
+        v-model="formData.gender"
+        value="Male"
+        class="ml-2"
+      />Male</label
+    >
+    <label for=""
+      ><input
+        type="radio"
+        name="gender"
+        value="Female"
+        class="ml-2"
+        v-model="formData.gender"
+      />Female</label
+    >
+    <label for=""
+      ><input
+        type="radio"
+        name="gender"
+        value="Others"
+        v-model="formData.gender"
+        class="ml-2"
+      />Other's</label
+    >
+    <br />
+    <label for="">Select Language</label><br />
+    <select v-model="formData.language">
+      <option value="">Select Any One Language</option>
+      <option value="Java">Java</option>
+      <option value="PHP">PHP</option>
+      <option value="Python">Python</option>
+      <option value="ASP-Net">ASP-Net</option>
+      <option value="C++">C++</option></select
+    ><br />
+
+    <label for="">Select Skills</label><br />
+    <select v-model="formData.skills" multiple>
+      <option value="Java">Java</option>
+      <option value="PHP">PHP</option>
+      <option value="Python">Python</option>
+      <option value="ASP-Net">ASP-Net</option>
+      <option value="C++">C++</option>
+    </select>
+
+    <br />
     <br />
     <hr />
-    <p>Your Comment Is : {{ myComment }}</p>
+    <h4 style="color: blueviolet">Your Given Information</h4>
+    <div v-for="(FormValue, key) in formData" :key="key">
+      <strong>{{ key }} : {{ FormValue }}</strong>
+    </div>
     <!-- <div class="tab"> -->
     <!-- <div class="tab__menu">
         <div
@@ -52,6 +113,13 @@ export default {
       activeTab: "Login",
       aboutMe: "Md. Jahidul Islam Noman",
       aboutBody: "My Name Is Jahiudl Islam Noman . I am  programmer.",
+      formData: {
+        fullName: "",
+        aboutYou: "",
+        gender: "Male",
+        language: "",
+        skills: [],
+      },
     };
   },
 
@@ -129,5 +197,8 @@ input {
 .tab__menu-item--active {
   background-color: rgb(27, 104, 192);
   color: #ffff;
+}
+.ml-2 {
+  margin-left: 11px;
 }
 </style>
