@@ -64,8 +64,41 @@
       <option value="ASP-Net">ASP-Net</option>
       <option value="C++">C++</option>
     </select>
-
     <br />
+    <label for="">Agreement</label><br />
+    <label for=""
+      ><input type="checkbox" v-model="formData.agreed" />A agree to the terms
+      and conditions</label
+    ><br />
+    <label for="">Agreement</label><br />
+    <label for=""
+      ><input
+        type="checkbox"
+        value="facebook"
+        v-model="formData.socialAccount"
+      />Facebook</label
+    >
+    <label for=""
+      ><input
+        type="checkbox"
+        value="twitter"
+        v-model="formData.socialAccount"
+      />Twitter</label
+    >
+    <label for=""
+      ><input
+        type="checkbox"
+        value="youtube"
+        v-model="formData.socialAccount"
+      />Youtube</label
+    >
+    <label for=""
+      ><input
+        type="checkbox"
+        value="imo"
+        v-model="formData.socialAccount"
+      />Imo</label
+    >
     <br />
     <hr />
     <h4 style="color: blueviolet">Your Given Information</h4>
@@ -119,6 +152,8 @@ export default {
         gender: "Male",
         language: "",
         skills: [],
+        agreed: false,
+        socialAccount: [],
       },
     };
   },
